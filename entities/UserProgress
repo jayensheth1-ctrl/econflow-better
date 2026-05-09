@@ -1,0 +1,123 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "xp": {
+      "type": "number",
+      "default": 0
+    },
+    "hearts": {
+      "type": "number",
+      "default": 3
+    },
+    "gems": {
+      "type": "number",
+      "default": 50
+    },
+    "streak": {
+      "type": "number",
+      "default": 0
+    },
+    "last_active_date": {
+      "type": "string"
+    },
+    "completed_lessons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_unit": {
+      "type": "number",
+      "default": 1
+    },
+    "level": {
+      "type": "number",
+      "default": 1
+    },
+    "last_reward_claimed": {
+      "type": "string"
+    },
+    "daily_reward_day": {
+      "type": "number",
+      "default": 1
+    },
+    "owned_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_wheel_spin": {
+      "type": "string"
+    },
+    "xp_boost_until": {
+      "type": "string"
+    },
+    "gold_theme_until": {
+      "type": "string"
+    },
+    "streak_freeze": {
+      "type": "boolean",
+      "default": false
+    },
+    "avatar_config": {
+      "type": "object",
+      "properties": {
+        "helmet": {
+          "type": "string",
+          "default": "basic"
+        },
+        "eyes": {
+          "type": "string",
+          "default": "cyan"
+        },
+        "outfit": {
+          "type": "string",
+          "default": "midnight"
+        },
+        "accessory": {
+          "type": "string",
+          "default": "none"
+        }
+      }
+    },
+    "stock_positions": {
+      "type": "object",
+      "description": "Map of ticker -> { shares, entryPrice, cash }"
+    },
+    "inventory_counts": {
+      "type": "object",
+      "description": "Map of item_id -> count for stackable consumables"
+    },
+    "gem_mode_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "gem_mode_locked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Permanently locked after all 5 buys and 5 sells are exhausted"
+    },
+    "gem_buys_left": {
+      "type": "number",
+      "default": 5,
+      "description": "Remaining gem mode buy trades (max 5 lifetime)"
+    },
+    "gem_sells_left": {
+      "type": "number",
+      "default": 5,
+      "description": "Remaining gem mode sell trades (max 5 lifetime)"
+    },
+    "gem_positions": {
+      "type": "object",
+      "description": "Map of ticker -> { shares, entryPrice } for gem mode positions"
+    }
+  },
+  "required": [
+    "xp",
+    "hearts",
+    "gems",
+    "streak"
+  ]
+}

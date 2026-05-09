@@ -1,0 +1,65 @@
+{
+  "name": "BattleRoom",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "6-digit room code"
+    },
+    "host_email": {
+      "type": "string"
+    },
+    "host_name": {
+      "type": "string"
+    },
+    "guest_email": {
+      "type": "string"
+    },
+    "guest_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "waiting",
+        "active",
+        "finished"
+      ],
+      "default": "waiting"
+    },
+    "host_score": {
+      "type": "number",
+      "default": 0
+    },
+    "guest_score": {
+      "type": "number",
+      "default": 0
+    },
+    "host_question_idx": {
+      "type": "number",
+      "default": 0
+    },
+    "guest_question_idx": {
+      "type": "number",
+      "default": 0
+    },
+    "winner_email": {
+      "type": "string"
+    },
+    "disconnected_email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "host_email",
+    "host_name",
+    "status"
+  ],
+  "rls": {
+    "create": true,
+    "read": true,
+    "update": true,
+    "delete": false
+  }
+}
