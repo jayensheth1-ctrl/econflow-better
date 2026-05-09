@@ -21,10 +21,6 @@ export default function Profile() {
   const [nameError, setNameError] = useState("");
   const [displayName, setDisplayName] = useState(() => getUsername());
 
-  useEffect(() => {
-    db.auth.me().then(setUser).catch(() => {});
-  }, []);
-
   // Keep in sync if another tab changes it
   useEffect(() => {
     const handler = (e) => setDisplayName(e.detail);
@@ -191,7 +187,7 @@ export default function Profile() {
 
       {/* Logout */}
       <button
-        onClick={() => db.auth.logout()}
+        onClick={() => { localStorage.clear(); window.location.href = "/"; }}
         className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-border
           text-muted-foreground font-semibold text-sm hover:bg-muted transition-colors"
       >
